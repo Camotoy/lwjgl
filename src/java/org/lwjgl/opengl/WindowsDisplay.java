@@ -685,6 +685,15 @@ final class WindowsDisplay implements DisplayImplementation {
 
 		return used;
 	}
+
+	public void setResizable(boolean resizable) {
+
+	}
+
+	public boolean wasResized() {
+		return false;
+	}
+
 	private static native long createIcon(int width, int height, IntBuffer icon);
 	private static native void destroyIcon(long handle);
 	private static native long sendMessage(long hwnd, long msg, long wparam, long lparam);

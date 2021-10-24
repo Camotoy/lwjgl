@@ -159,4 +159,27 @@ interface DisplayImplementation extends InputImplementation {
 	 * @return number of icons used.
 	 */
 	int setIcon(ByteBuffer[] icons);
+
+	/**
+	 * Enable or disable the Display window to be resized.
+	 *
+	 * @param resizable set to true to make the Display window resizable;
+	 * false to disable resizing on the Display window.
+	 */
+	void setResizable(boolean resizable);
+
+	/**
+	 * @return true if the Display window has been resized since this method was last called.
+	 */
+	boolean wasResized();
+
+	/**
+	 * @return this method will return a the width of the Display window.
+	 */
+	int getWidth();
+
+	/**
+	 * @return this method will return a the height of the Display window.
+	 */
+	int getHeight();
 }

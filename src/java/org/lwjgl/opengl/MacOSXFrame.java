@@ -68,7 +68,7 @@ final class MacOSXFrame extends Frame implements WindowListener, ComponentListen
 	private boolean should_release_cursor;
 
 	MacOSXFrame(DisplayMode mode, final java.awt.DisplayMode requested_mode, boolean fullscreen, int x, int y) throws LWJGLException {
-		setResizable(false);
+		setResizable(Display.isResizable());
 		addWindowListener(this);
 		addComponentListener(this);
 		canvas = new MacOSXGLCanvas();
@@ -89,7 +89,7 @@ final class MacOSXFrame extends Frame implements WindowListener, ComponentListen
 							if (isDisplayable())
 								dispose();
 							throw new LWJGLException("AWT capped mode: requested mode = " + requested_mode.getWidth() + "x" + requested_mode.getHeight() +
-								" but got " + real_mode.getWidth() + " " + real_mode.getHeight());
+									" but got " + real_mode.getWidth() + " " + real_mode.getHeight());
 						}
 						return null;
 					}

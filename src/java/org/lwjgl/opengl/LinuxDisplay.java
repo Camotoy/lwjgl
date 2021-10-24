@@ -1245,6 +1245,14 @@ final class LinuxDisplay implements DisplayImplementation {
 		}
 	}
 
+	public void setResizable(boolean resizable) {
+
+	}
+
+	public boolean wasResized() {
+		return false;
+	}
+
 	private static native void nSetWindowIcon(long display, long window, ByteBuffer icon_rgb, int icon_rgb_size, ByteBuffer icon_mask, int icon_mask_size, int width, int height);
 
 	public int getWidth() {
