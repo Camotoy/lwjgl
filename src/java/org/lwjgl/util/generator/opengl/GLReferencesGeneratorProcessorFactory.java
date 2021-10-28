@@ -32,6 +32,7 @@
 
 package org.lwjgl.util.generator.opengl;
 
+import org.lwjgl.util.generator.Alternate;
 import org.lwjgl.util.generator.CachedReference;
 import org.lwjgl.util.generator.Utils;
 
@@ -164,6 +165,10 @@ public class GLReferencesGeneratorProcessorFactory implements AnnotationProcesso
 
 		private static void generateReferencesFromMethods(PrintWriter writer, InterfaceDeclaration interface_decl) {
 			for (MethodDeclaration method : interface_decl.getMethods()) {
+				if ( method.getAnnotation(Alternate.class) != null ) {
+					continue;
+				}
+
 				generateReferencesFromParameters(writer, interface_decl, method);
 			}
 		}
